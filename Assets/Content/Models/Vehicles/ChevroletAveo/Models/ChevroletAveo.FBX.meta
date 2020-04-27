@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 5f6edffc08dbe4b4f8302fd4bb09ec14
+timeCreated: 1531904272
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BackLeftWheel_Disk
+    100002: BackLeftWheel_Tyres
+    100004: BackRightWheel_Disk
+    100006: BackRightWheel_Tyres
+    100008: Body
+    100010: //RootNode
+    100012: Chrome
+    100014: FrontLeftWheel_Disk
+    100016: FrontLeftWheel_Tyres
+    100018: FrontRightWheel_Disk
+    100020: FrontRightWheel_Tyres
+    100022: Group_8
+    100024: ID1043
+    100026: ID1271
+    100028: ID1341
+    100030: ID185
+    100032: ID253
+    100034: ID265
+    100036: ID576
+    100038: ID716
+    100040: ID894
+    100042: ID919
+    100044: ID959
+    100046: Object001
+    100048: Object002
+    100050: BackLightsA
+    100052: BackLightsB
+    400000: BackLeftWheel_Disk
+    400002: BackLeftWheel_Tyres
+    400004: BackRightWheel_Disk
+    400006: BackRightWheel_Tyres
+    400008: Body
+    400010: //RootNode
+    400012: Chrome
+    400014: FrontLeftWheel_Disk
+    400016: FrontLeftWheel_Tyres
+    400018: FrontRightWheel_Disk
+    400020: FrontRightWheel_Tyres
+    400022: Group_8
+    400024: ID1043
+    400026: ID1271
+    400028: ID1341
+    400030: ID185
+    400032: ID253
+    400034: ID265
+    400036: ID576
+    400038: ID716
+    400040: ID894
+    400042: ID919
+    400044: ID959
+    400046: Object001
+    400048: Object002
+    400050: BackLightsA
+    400052: BackLightsB
+    2300000: BackLeftWheel_Disk
+    2300002: BackLeftWheel_Tyres
+    2300004: BackRightWheel_Disk
+    2300006: BackRightWheel_Tyres
+    2300008: Body
+    2300010: Chrome
+    2300012: FrontLeftWheel_Disk
+    2300014: FrontLeftWheel_Tyres
+    2300016: FrontRightWheel_Disk
+    2300018: FrontRightWheel_Tyres
+    2300020: Group_8
+    2300022: ID1043
+    2300024: ID1271
+    2300026: ID1341
+    2300028: ID185
+    2300030: ID253
+    2300032: ID265
+    2300034: ID576
+    2300036: ID716
+    2300038: ID894
+    2300040: ID919
+    2300042: ID959
+    2300044: Object001
+    2300046: Object002
+    2300048: BackLightsA
+    2300050: BackLightsB
+    3300000: BackLeftWheel_Disk
+    3300002: BackLeftWheel_Tyres
+    3300004: BackRightWheel_Disk
+    3300006: BackRightWheel_Tyres
+    3300008: Body
+    3300010: Chrome
+    3300012: FrontLeftWheel_Disk
+    3300014: FrontLeftWheel_Tyres
+    3300016: FrontRightWheel_Disk
+    3300018: FrontRightWheel_Tyres
+    3300020: Group_8
+    3300022: ID1043
+    3300024: ID1271
+    3300026: ID1341
+    3300028: ID185
+    3300030: ID253
+    3300032: ID265
+    3300034: ID576
+    3300036: ID716
+    3300038: ID894
+    3300040: ID919
+    3300042: ID959
+    3300044: Object001
+    3300046: Object002
+    3300048: BackLightsA
+    3300050: BackLightsB
+    4300000: ID265
+    4300002: Group_8
+    4300004: Chrome
+    4300006: ID185
+    4300008: ID253
+    4300010: Body
+    4300012: ID1341
+    4300014: ID1043
+    4300016: ID959
+    4300018: ID894
+    4300020: ID919
+    4300022: ID576
+    4300024: ID716
+    4300026: ID1271
+    4300028: Object001
+    4300030: FrontLeftWheel_Tyres
+    4300032: FrontRightWheel_Tyres
+    4300034: BackRightWheel_Tyres
+    4300036: BackLeftWheel_Tyres
+    4300038: FrontRightWheel_Disk
+    4300040: FrontLeftWheel_Disk
+    4300042: BackRightWheel_Disk
+    4300044: BackLeftWheel_Disk
+    4300046: Object002
+    4300048: BackLightsA
+    4300050: BackLightsB
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

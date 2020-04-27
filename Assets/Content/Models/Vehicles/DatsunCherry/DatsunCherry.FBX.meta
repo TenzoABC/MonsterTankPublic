@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 3c55b77b3e319854b993f346e00f7a3b
+timeCreated: 1524640798
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: DrawCall_1573
+    100004: DrawCall_1574
+    100006: DrawCall_1575
+    100008: DrawCall_1576
+    100010: DrawCall_1583
+    100012: DrawCall_1584
+    100014: DrawCall_1588
+    100016: DrawCall_1589
+    100018: DrawCall_1590
+    100020: DrawCall_1591
+    100022: DrawCall_1592
+    100024: DrawCall_1593
+    100026: DrawCall_1825
+    100028: Body
+    100030: Glass
+    100032: Interior
+    100034: WheelFrontLeft
+    100036: WheelFrontRight
+    100038: WheelRearLeft
+    100040: WheelRearRight
+    400000: //RootNode
+    400002: DrawCall_1573
+    400004: DrawCall_1574
+    400006: DrawCall_1575
+    400008: DrawCall_1576
+    400010: DrawCall_1583
+    400012: DrawCall_1584
+    400014: DrawCall_1588
+    400016: DrawCall_1589
+    400018: DrawCall_1590
+    400020: DrawCall_1591
+    400022: DrawCall_1592
+    400024: DrawCall_1593
+    400026: DrawCall_1825
+    400028: Body
+    400030: Glass
+    400032: Interior
+    400034: WheelFrontLeft
+    400036: WheelFrontRight
+    400038: WheelRearLeft
+    400040: WheelRearRight
+    2300000: DrawCall_1573
+    2300002: DrawCall_1574
+    2300004: DrawCall_1575
+    2300006: DrawCall_1576
+    2300008: DrawCall_1583
+    2300010: DrawCall_1584
+    2300012: DrawCall_1588
+    2300014: DrawCall_1589
+    2300016: DrawCall_1590
+    2300018: DrawCall_1591
+    2300020: DrawCall_1592
+    2300022: DrawCall_1593
+    2300024: DrawCall_1825
+    2300026: Body
+    2300028: Glass
+    2300030: Interior
+    2300032: WheelFrontLeft
+    2300034: WheelFrontRight
+    2300036: WheelRearLeft
+    2300038: WheelRearRight
+    3300000: DrawCall_1573
+    3300002: DrawCall_1574
+    3300004: DrawCall_1575
+    3300006: DrawCall_1576
+    3300008: DrawCall_1583
+    3300010: DrawCall_1584
+    3300012: DrawCall_1588
+    3300014: DrawCall_1589
+    3300016: DrawCall_1590
+    3300018: DrawCall_1591
+    3300020: DrawCall_1592
+    3300022: DrawCall_1593
+    3300024: DrawCall_1825
+    3300026: Body
+    3300028: Glass
+    3300030: Interior
+    3300032: WheelFrontLeft
+    3300034: WheelFrontRight
+    3300036: WheelRearLeft
+    3300038: WheelRearRight
+    4300000: DrawCall_1573
+    4300002: DrawCall_1574
+    4300004: DrawCall_1575
+    4300006: DrawCall_1576
+    4300008: DrawCall_1583
+    4300010: DrawCall_1584
+    4300012: DrawCall_1588
+    4300014: DrawCall_1590
+    4300016: DrawCall_1589
+    4300018: DrawCall_1591
+    4300020: DrawCall_1592
+    4300022: DrawCall_1593
+    4300024: DrawCall_1825
+    4300026: Body
+    4300028: WheelRearLeft
+    4300030: WheelFrontLeft
+    4300032: WheelFrontRight
+    4300034: WheelRearRight
+    4300036: Interior
+    4300038: Glass
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
