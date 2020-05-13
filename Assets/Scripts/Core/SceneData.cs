@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using Common;
 
-namespace Common
+namespace Core
 {
     /// <summary>
     /// Класс, содержащий общую информацию о сцене
@@ -12,39 +13,43 @@ namespace Common
         /// </summary>
         [SerializeField]
         private float topBorder = 0;
+
         /// <summary>
         /// Свойство, возвращающее координату верхней границы
         /// боевого поля сцены
         /// </summary>
         public float TopBorder { get { return topBorder; } }
 
-        [SerializeField]
         /// <summary>
         /// Поле, отражающее нижнюю границу боевого поля сцены
         /// </summary>
+        [SerializeField]
         private float downBorder = 0;
+
         /// <summary>
         /// Свойство, возвращающее координату нижней границы
         /// боевого поля сцены
         /// </summary>
         public float DownBorder { get { return downBorder; } }
 
-        [SerializeField]
         /// <summary>
         /// Поле, отражающее правую границу боевого поля сцены
         /// </summary>
+        [SerializeField]
         private float rightBorder = 0;
+
         /// <summary>
         /// Свойство, возвращающее координату правой границы
         /// боевого поля сцены
         /// </summary>
         public float RightBorder { get { return rightBorder; } }
 
-        [SerializeField]
         /// <summary>
         /// Поле, отражающее левую границу боевого поля сцены
         /// </summary>
+        [SerializeField]
         private float leftBorder = 0;
+
         /// <summary>
         /// Свойство, возвращающее координату левой границы
         /// боевого поля сцены
@@ -52,8 +57,7 @@ namespace Common
         public float LeftBorder { get { return leftBorder; } }
 
         /// <summary>
-        /// Метод, срабатывающий по соответствующему Unity-событию
-        /// и передающий указатель на объект класса
+        /// Метод, передающий указатель на объект класса
         /// </summary>
         private void OnEnable()
         {

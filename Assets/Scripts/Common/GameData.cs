@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Common.Events;
 using Common.Enums;
+using Core;
 
 namespace Common
 {
@@ -22,6 +23,7 @@ namespace Common
         /// Поле, являющееся указателем на компонент Transform игрока
         /// </summary>
         private static Transform playerTransformPtr = null;
+
         /// <summary>
         /// Свойство для инициализации и доступа
         /// к компоненту Transform игрока
@@ -41,6 +43,7 @@ namespace Common
         /// содержащий информацию о сцене
         /// </summary>
         private static SceneData sceneDataPtr = null;
+
         /// <summary>
         /// Свойство для инициализации и доступа к объекту,
         /// содержащему информацию о сцене

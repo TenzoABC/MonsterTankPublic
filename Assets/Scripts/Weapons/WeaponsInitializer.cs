@@ -10,7 +10,7 @@ namespace Weapon
 {
     /// <summary>
     /// Класс, используемый для создания и инициализации оружия
-    /// в момент запуска начала игры
+    /// в момент запуска игры
     /// </summary>
     public class WeaponsInitializer : MonoBehaviour, IValidation, IClearable
     {
@@ -20,6 +20,7 @@ namespace Weapon
         /// </summary>
         [SerializeField]
         private List<AbstractWeapon> weaponPrefabs;
+
         /// <summary>
         /// Ссылка на объект контроллера оружия
         /// </summary>

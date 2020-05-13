@@ -18,21 +18,25 @@ namespace Player
         /// </summary>
         [SerializeField]
         private Slider healthBar = null;
+
         /// <summary>
         /// Текущее количество здоровья игрока
         /// </summary>
         [SerializeField]
         private float health = 100;
+
         /// <summary>
         /// Текущее количество защиты игрока
         /// </summary>
         [SerializeField, Range(0, 1)]
         private float defence = 0;
+
         /// <summary>
         /// Время, используемое для получения задержки между моментами получения урона игроком
         /// </summary>
         [SerializeField]
         private float timeoutBetweenDamages = 0.3f;
+
         /// <summary>
         /// Текущее время задержки для получения урона
         /// </summary>
@@ -72,11 +76,8 @@ namespace Player
         }
 
         /// <summary>
-        /// Метод, срабатывающий по Unity-событию о столкновении игрока с другим объектом.
         /// Метод используется для обработки столкновения игрока с монстром
         /// </summary>
-        /// <param name="otherCollider">Коллайдер, содержащий информацию
-        /// об объекте, с которым произошло столкновение</param>
         private void OnTriggerStay(Collider otherCollider)
         {
             if (otherCollider.CompareTag("Monster"))
@@ -92,10 +93,8 @@ namespace Player
 
         /// <summary>
         /// Метод, используемый для определения возможности получения урона игроком.
-        /// В случае, если получение урона возможно, то запускает сопрограмму для
-        /// ожидания обработки столкновения со всеми монстрами в кадре
         /// </summary>
-        /// <returns>Переменная логического типа, отражающая
+        /// <returns>Логическая переменная, отражающая
         /// возможность получения урона игроком</returns>
         private bool CheckGetDamage()
         {
@@ -111,7 +110,7 @@ namespace Player
         /// Сопрограмма (итератор) для ожидания обработки столкновения со
         /// всеми монстрами, с которыми произошло столкновение в кадре
         /// </summary>
-        /// <returns>Выполнение итератора продолжается события LateUpdate и рендеринга сцены</returns>
+        /// <returns>Выполнение итератора продолжается после рендера GUI</returns>
         private IEnumerator WaitAllTriggers()
         {
             yield return new WaitForEndOfFrame();
@@ -124,7 +123,7 @@ namespace Player
         /// <param name="monster">Экземпляр монстра, который наносит урон</param>
         private void GetDamage(AbstractMonster monster)
         {
-            health = CalculatingHealth(health, defence, monster.Damage);
+            health = CalculatingHealth(monster.Damage);
 
             UpdateHealth();
 
@@ -140,13 +139,12 @@ namespace Player
         /// Метод, используемый для расчета количества очков здоровья игрока
         /// после столкновения с монстром
         /// </summary>
-        /// <param name="health">Количество здоровья, имеющееся у игрока до получения урона</param>
-        /// <param name="defence">Текущая защита игрока</param>
         /// <param name="damage">Количество урона, полученного игроком</param>
         /// <returns>Количество здоровья, оставшееся после получения урона</returns>
-        private float CalculatingHealth(float health, float defence, float damage)
+        private float CalculatingHealth(float damage)
         {
-            return health - (damage * (1 - defence));
+            float multiplierOfDamage = 1 - defence;
+            return (health - (damage * multiplierOfDamage));
         }
 
         /// <summary>

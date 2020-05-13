@@ -6,12 +6,12 @@ namespace Core.Input
 {
     /// <summary>
     /// Класс, реализующий абстракцию ввода
-    /// пользовательских команд через клавиатуру
+    /// команд через клавиатуру
     /// </summary>
     public class KeyboardInput : AbstractInput
     {
         /// <summary>
-        /// Словарь, содержащий команды в виде пар "событие игрока"-"массив клавишь", привязанных к событию
+        /// Словарь, содержащий команды в виде пар "событие игрока"-"массив клавишь, привязанных к событию"
         /// </summary>
         private Dictionary<PlayerEvents, KeyCode[]> keysCommands = new Dictionary<PlayerEvents, KeyCode[]>();
 
@@ -33,7 +33,7 @@ namespace Core.Input
         }
 
         /// <summary>
-        /// Метод, для получения списка введенных пользователем команд
+        /// Метод для получения списка введенных игроком команд
         /// </summary>
         /// <returns>Список команд игрока</returns>
         public override List<PlayerEvents> GetCommands()

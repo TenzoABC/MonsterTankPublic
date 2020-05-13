@@ -14,11 +14,13 @@ namespace Player
         /// </summary>
         [SerializeField]
         private Transform playerPrefab = null;
+
         /// <summary>
         /// Вектор позиции, в которой нужно создать игрока
         /// </summary>
         [SerializeField]
         private Vector3 playerPosition = Vector3.zero;
+
         /// <summary>
         /// Вектор поворота, с которым нужно создать игрока
         /// </summary>
@@ -40,8 +42,8 @@ namespace Player
         }
 
         /// <summary>
-        /// Метод, используемый для создания объекта игрока на
-        /// сцене в момент начала игры
+        /// Метод, используемый для создания объекта
+        /// игрока на сцене
         /// </summary>
         public void Initialize()
         {

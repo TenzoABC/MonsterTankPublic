@@ -18,14 +18,15 @@ namespace Core
         private Transform cameraInstance = null;
 
         /// <summary>
-        /// Расстояние, на которое далжна быть удалена
+        /// Расстояние, на которое должна быть удалена
         /// камера от объекта игрока (танка)
         /// </summary>
         [SerializeField]
         private Vector3 differenceOfPositions = new Vector3(0, -30, 30);
+
         /// <summary>
         /// Стартовая позиция камеры, в которой должна
-        /// находиться камеры в периоды неактивности
+        /// находиться камера в периоды неактивности
         /// </summary>
         private Vector3 startPositionOfCamera = Vector3.zero;
 
@@ -48,13 +49,18 @@ namespace Core
                 Debug.LogError("Current object on \"cameraInstance\" haven't component \"Camera\". " + this);
         }
 
-        /// <summary>
-        /// Перемещение камеры при каждом Unity-событии LateUpdate
-        /// </summary>
         private void LateUpdate()
         {
             if (GameController.GameIsStarted)
-                cameraInstance.position = GameData.PlayerTransformPtr.position - differenceOfPositions;
+                Movement();
+        }
+
+        /// <summary>
+        /// Перемещение камеры к объекту игрока
+        /// </summary>
+        private void Movement()
+        {
+            cameraInstance.position = GameData.PlayerTransformPtr.position - differenceOfPositions;
         }
 
         /// <summary>

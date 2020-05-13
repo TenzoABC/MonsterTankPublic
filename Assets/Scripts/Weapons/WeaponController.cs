@@ -7,19 +7,20 @@ using Common.Events;
 namespace Weapon
 {
     /// <summary>
-    /// Класс, Используется для управления оружием, его сменой и стрельбой
+    /// Класс используется для управления оружием, его сменой и стрельбой
     /// </summary>
     public class WeaponController : MonoBehaviour, IValidation, IClearable
     {
         /// <summary>
         /// Ссылка на объект, являющийся родителем для создаваемого
-        /// оружия и содержащий координатную точку, в которой необходимо создавать оружие
+        /// оружия и в позиции которого необходимо создавать оружие
         /// </summary>
         [SerializeField]
         private Transform weaponRoot = null;
+
         /// <summary>
-        /// Свойство, используемое для организации доступа к координатной
-        /// точке создания оружия из других классов
+        /// Свойство, используемое для организации доступа к родительскому
+        /// объекту оружия из других классов
         /// </summary>
         public Transform WeaponRoot => weaponRoot;
 
@@ -27,19 +28,23 @@ namespace Weapon
         /// Идентификатор текущего оружия
         /// </summary>
         private int idCurrentWeapon = 0;
+
         /// <summary>
         /// Обобщенная коллекция, используемая для хранения всех созданных экземпляров оружия
         /// </summary>
         public List<AbstractWeapon> ArrayWeapons { get; private set; } = new List<AbstractWeapon>();
+
         /// <summary>
-        /// Коллекция, содержащая экземпляры всех созданных снарядов
+        /// Коллекция, содержащая экземпляры всех снарядов
         /// </summary>
         private List<AbstractBullets> bulletsInstances = new List<AbstractBullets>();
+
         /// <summary>
-        /// Задержка между моментами новой смены оружия
+        /// Задержка между сменой оружия
         /// </summary>
         [SerializeField]
         private float timeoutBetweenChange = 0.3f;
+
         /// <summary>
         /// Текущее время задержки между сменой оружия
         /// </summary>
@@ -138,7 +143,7 @@ namespace Weapon
         }
 
         /// <summary>
-        /// Метод, используемый для запуска выстрела на активном оружии
+        /// Метод, используемый для запуска выстрела для активного оружия
         /// </summary>
         private void Shot()
         {

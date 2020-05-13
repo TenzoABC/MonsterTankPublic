@@ -12,12 +12,13 @@ namespace Core
     public class PoolOfObjects : MonoBehaviour
     {
         /// <summary>
-        /// Поле содержит префаб объекта того типа, для которого и был создан пул
+        /// Поле содержит префаб объекта того типа, для которого был создан пул
         /// </summary>
         private IPoolable prefabOfObject = null;
+
         /// <summary>
-        /// Коллекция, используемая для хранения объектов,
-        /// которые являются неактивными и доступны для создания
+        /// Коллекция, используемая для хранения объектов пула
+        /// (объекты неактивны и доступны для использования)
         /// </summary>
         private List<IPoolable> availableInstances = new List<IPoolable>();
 
@@ -39,7 +40,7 @@ namespace Core
         /// <summary>
         /// Метод, используемый для получения экземпляра объекта из пула
         /// </summary>
-        /// <returns>Экземпляр объекта</returns>
+        /// <returns>Экземпляр объекта пула</returns>
         public T GetObject<T>() where T : MonoBehaviour, IPoolable
         {
             T instance;
@@ -52,8 +53,7 @@ namespace Core
                 availableInstances.RemoveAt(idLastAvailable);
                 instance.gameObject.SetActive(true);
             }
-
-            // Создаём новый пул объектов
+            // Создание нового объекта пула
             else
             {
                 instance = Instantiate((T)prefabOfObject);

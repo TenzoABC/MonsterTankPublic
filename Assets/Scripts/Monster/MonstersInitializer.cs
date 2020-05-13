@@ -22,11 +22,13 @@ namespace Monster
         /// </summary>
         [SerializeField]
         private int maxCountOfMonsters = 10;
+
         /// <summary>
-        /// Коллекция, хранящая префабы всех монстров, которые могут быть созданы
+        /// Коллекция, хранящая префабы всех типов монстров, которые могут быть созданы
         /// </summary>
         [SerializeField]
         private List<AbstractMonster> monstersPrefabs = null;
+
         /// <summary>
         /// Ссылка на объект, представляющий контроллер управления монстрами
         /// </summary>
@@ -82,7 +84,7 @@ namespace Monster
         /// Метод, проверяющий соответствие текущего количества активных монстров
         /// максимальному числу одновременно активных монстров
         /// </summary>
-        /// <returns>Переменная, отражающая возможность создания нового монстра на сцене</returns>
+        /// <returns>Логическая переменная, отражающая возможность создания нового монстра на сцене</returns>
         private bool CheckIfCanInstantiate()
         {
             var activeMonsterCount = monstersController.CheckAliveMonsters();
@@ -107,9 +109,9 @@ namespace Monster
         }
 
         /// <summary>
-        /// Метод, используемый для получения координаты создания нового монстра
+        /// Метод, используемый для получения стартовой позиции нового монстра
         /// </summary>
-        /// <returns>Позиция инстанцирования монстра в виде вектора</returns>
+        /// <returns>Стартовой позиция монстра в виде вектора</returns>
         private Vector3 GetMonsterPosition()
         {
             // 4 границы, вдоль которых может быть создан объект

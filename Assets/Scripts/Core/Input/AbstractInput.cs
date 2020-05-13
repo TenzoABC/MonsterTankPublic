@@ -11,11 +11,12 @@ namespace Core.Input
     public abstract class AbstractInput : MonoBehaviour
     {
         /// <summary>
-        /// Список команд, полученных от пользователя за конкретный кадр
+        /// Список команд, полученных от игрока
         /// </summary>
         protected List<PlayerEvents> activeCommands;
+
         /// <summary>
-        /// Абстрактный метод для получения списка введенных пользователем команд
+        /// Абстрактный метод для получения списка введенных игроком команд
         /// </summary>
         /// <returns>Список команд игрока</returns>
         public abstract List<PlayerEvents> GetCommands();

@@ -16,6 +16,7 @@ namespace Core.Movement
         /// </summary>
         [SerializeField]
         private float speedMove = 0.5f;
+
         /// <summary>
         /// Скорость поворота игрока
         /// </summary>
@@ -60,7 +61,7 @@ namespace Core.Movement
         }
 
         /// <summary>
-        /// Метод, используемый для реализации поворота влево
+        /// Метод, используемый для реализации поворота налево
         /// </summary>
         public void TurnLeft()
         {
@@ -68,7 +69,7 @@ namespace Core.Movement
         }
 
         /// <summary>
-        /// Метод, используемый для реализации поворота вправо
+        /// Метод, используемый для реализации поворота направо
         /// </summary>
         public void TurnRight()
         {

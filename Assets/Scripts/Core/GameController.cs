@@ -23,16 +23,19 @@ namespace Core
         /// </summary>
         [SerializeField]
         private PlayerInitializer playerInitializer = null;
+
         /// <summary>
         /// Ссылка на объект-инициализатор оружия игрока
         /// </summary>
         [SerializeField]
         private WeaponsInitializer mainWeaponsInitializer = null;
+
         /// <summary>
         /// Ссылка на объект-инициализатор монстров
         /// </summary>
         [SerializeField]
         private MonstersInitializer monstersInitializer = null;
+
         /// <summary>
         /// Ссылка на главное меню игры
         /// </summary>
@@ -61,7 +64,7 @@ namespace Core
         }
 
         /// <summary>
-        /// Метод используется для запуска игры
+        /// Метод, используемый для запуска игры
         /// </summary>
         public void StartGame()
         {

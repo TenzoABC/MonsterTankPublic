@@ -29,7 +29,7 @@ namespace Weapon
         }
 
         /// <summary>
-        /// Метод, используемый для обработки задержки между выстрелами
+        /// Метод, используемый для обработки задержки между выстрелами оружия
         /// </summary>
         protected override void CheckTimeoutOfShots()
         {
@@ -40,7 +40,7 @@ namespace Weapon
         /// <summary>
         /// Переопределенный метод, используемый для инициализации выстрела оружия
         /// </summary>
-        /// <returns>Экземпляр снаряда, создаваемого при выстреле</returns>
+        /// <returns>Ссылка на объект снаряда</returns>
         public override AbstractBullets Shot()
         {
             timeToNextShot = timeoutBetweenShots;

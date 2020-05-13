@@ -30,9 +30,9 @@ namespace Monster
         }
 
         /// <summary>
-        /// Метод, используемый для перемещения монстра
+        /// Метод используется для перемещения монстра к точке на сцене
         /// </summary>
-        /// <param name="pointOfMove">Точка, к которой необходимо переместить монстра</param>
+        /// <param name="pointOfMove">Вектор позиции, к которой необходимо переместиться</param>
         public override void MoveToPoint(Vector3 pointOfMove)
         {
             if (!isIdle)
@@ -46,8 +46,6 @@ namespace Monster
         /// Метод, используемый для обработки столкновения
         /// монстра со снарядом или игроком
         /// </summary>
-        /// <param name="otherCollider">Коллайдер, содержащий информацию
-        /// об объекте, с которым произошло столкновение</param>
         private void OnTriggerEnter(Collider otherCollider)
         {
             if (otherCollider.CompareTag("Bullet"))
@@ -57,17 +55,16 @@ namespace Monster
                     GetDamage(bullet);
             }
             if (otherCollider.CompareTag("Player"))
-                isIdle = true;
+                Fight();
         }
 
         /// <summary>
-        /// Метод, используемый для обработки урона, полученного от столкновения со снарядом
+        /// Метод используется для получения урона монстром
         /// </summary>
-        /// <param name="bullet">Объект снаряда, с которым
-        /// произощло столкновение монстра</param>
+        /// <param name="bullet">Ссылка на экземпляр снаряда</param>
         protected override void GetDamage(AbstractBullets bullet)
         {
-            health = CalculatingHealth(health, defence, bullet.Damage);
+            health = CalculatingHealth(bullet.Damage);
 
             if (health <= 0)
             {
@@ -77,10 +74,17 @@ namespace Monster
         }
 
         /// <summary>
+        /// Метод используется для перевода монстра в режим боя
+        /// </summary>
+        protected override void Fight()
+        {
+            isIdle = true;
+        }
+
+        /// <summary>
         /// Метод, используемый перевода монстра из состояния
         /// ожидания в состояние перемещения до игрока
         /// </summary>
-        /// <param name="otherCollider">Коллайдер, столкновение с которым закончилось</param>
         private void OnTriggerExit(Collider otherCollider)
         {
             if (otherCollider.CompareTag("Player"))
@@ -88,16 +92,15 @@ namespace Monster
         }
 
         /// <summary>
-        /// Метод, используемый для расчета количества очков здоровья монстра
-        /// после попадения в монстра снаряда
+        /// Метод вычисляет количество здоровья монстра, оставшееся после нанесения ему урона
         /// </summary>
-        /// <param name="health">Количество здоровья, имеющееся у монстра до получения урона</param>
-        /// <param name="defence">Текущая защита монстра</param>
-        /// <param name="damage">Количество урона, полученного монстром</param>
-        /// <returns>Количество здоровья, оставшееся после получения урона</returns>
-        protected override float CalculatingHealth(float health, float defence, float damage)
+        /// <param name="damage">Количество урона, нанесенного монстру</param>
+        /// <returns>Количество очков здоровья, оставшееся у 
+        /// монстра после получения урона</returns>
+        protected override float CalculatingHealth(float damage)
         {
-            return health - (damage * (1 - defence));
+            float multiplierOfDamage = 1 - defence;
+            return (health - (damage * multiplierOfDamage));
         }
     }
 }

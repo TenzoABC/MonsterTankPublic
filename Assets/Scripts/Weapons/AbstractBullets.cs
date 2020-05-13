@@ -14,11 +14,13 @@ namespace Weapon
         /// </summary>
         [SerializeField]
         protected float speedMove = 1;
+
         /// <summary>
         /// Количество урона, наносимого снарядом
         /// </summary>
         [SerializeField]
         protected float damage = 1;
+
         /// <summary>
         /// Свойство, используемое для получения из других классов
         /// количества урона, наносимого снарядом
@@ -29,6 +31,7 @@ namespace Weapon
         /// Поле, содержащее ссылку на объект пула объектов
         /// </summary>
         protected PoolOfObjects poolInstance = null;
+
         /// <summary>
         /// Свойство, используемое для инициализации и внешнего доступа
         /// к полю, содержащему ссылку на экземпляр пула объектов
@@ -46,7 +49,7 @@ namespace Weapon
         /// <summary>
         /// Метод используется для получения экземпляра снаряда из пула объектов
         /// </summary>
-        /// <returns>Экземпляр объекта пула</returns>
+        /// <returns>Экземпляр объекта из пула</returns>
         public IPoolable GetPoolInstance()
         {
             if (!poolInstance)

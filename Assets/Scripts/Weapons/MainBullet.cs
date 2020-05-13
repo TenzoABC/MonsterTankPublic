@@ -19,8 +19,6 @@ namespace Weapon
         /// Метод, используемый для обработки столкновения снаряда с
         /// монстром или с границей игрового поля
         /// </summary>
-        /// <param name="otherCollider">Коллайдер, содержащий информацию
-        /// об объекте, с которым произошло столкновение</param>
         private void OnTriggerEnter(Collider otherCollider)
         {
             if (otherCollider.CompareTag("BorderOfZone") == true ||
