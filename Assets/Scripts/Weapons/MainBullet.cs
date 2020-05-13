@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Common.Enums;
+using Common.Events;
+using UnityEngine;
 
 namespace Weapon
 {
@@ -7,6 +9,19 @@ namespace Weapon
     /// </summary>
     public class MainBullet : AbstractBullets
     {
+        private void Start()
+        {
+            EventController<PlayerEvents>.GameEvents[PlayerEvents.Lose] += Reboot;
+        }
+
+        /// <summary>
+        /// Вызов метода перемещения снаряда в каждом кадре по Unity-событию
+        /// </summary>
+        private void Update()
+        {
+            MoveBullet();
+        }
+
         /// <summary>
         /// Переопределенный метод для обработки перемещения снаряда
         /// </summary>
@@ -23,6 +38,17 @@ namespace Weapon
         {
             if (otherCollider.CompareTag("BorderOfZone") == true ||
                 otherCollider.CompareTag("Monster") == true)
+            {
+                ReturnToPool();
+            }
+        }
+
+        /// <summary>
+        /// Перезагрузка объекта класса
+        /// </summary>
+        public override void Reboot()
+        {
+            if (isActiveAndEnabled)
             {
                 ReturnToPool();
             }

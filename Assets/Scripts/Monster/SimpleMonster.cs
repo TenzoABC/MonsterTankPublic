@@ -2,6 +2,8 @@
 using Weapon;
 using Common.Events;
 using Common.Enums;
+using Core;
+using Common;
 
 namespace Monster
 {
@@ -29,14 +31,28 @@ namespace Monster
             damage = damageOfInstace;
         }
 
+        private void Start()
+        {
+            EventController<PlayerEvents>.GameEvents[PlayerEvents.Lose] += Reboot;
+        }
+
+        /// <summary>
+        /// Вызов метода перемещения монстра в каждом кадре по Unity-событию
+        /// </summary>
+        private void Update()
+        {
+            if (GameController.GameIsStarted)
+                MoveToPoint();
+        }
+
         /// <summary>
         /// Метод используется для перемещения монстра к точке на сцене
         /// </summary>
-        /// <param name="pointOfMove">Вектор позиции, к которой необходимо переместиться</param>
-        public override void MoveToPoint(Vector3 pointOfMove)
+        public override void MoveToPoint()
         {
             if (!isIdle)
             {
+                Vector3 pointOfMove = GameData.PlayerTransformPtr.position;
                 transform.LookAt(pointOfMove);
                 transform.Translate(new Vector3(0, 0, speedMove * Time.deltaTime));
             }
@@ -101,6 +117,17 @@ namespace Monster
         {
             float multiplierOfDamage = 1 - defence;
             return (health - (damage * multiplierOfDamage));
+        }
+
+        /// <summary>
+        /// Перезагрузка объекта класса
+        /// </summary>
+        public override void Reboot()
+        {
+            if (isActiveAndEnabled)
+            {
+                ReturnToPool();
+            }
         }
     }
 }

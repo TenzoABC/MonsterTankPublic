@@ -7,7 +7,7 @@ namespace Weapon
     /// <summary>
     /// Абстрактный класс, описывающий абстракцию боевого снаряда игрока
     /// </summary>
-    public abstract class AbstractBullets : MonoBehaviour, IPoolable
+    public abstract class AbstractBullets : MonoBehaviour, IPoolable, IClearable
     {
         /// <summary>
         /// Скорость перемещения снаряда при его перемещении
@@ -75,5 +75,10 @@ namespace Weapon
         /// Метод используется для перемещения снаряда
         /// </summary>
         public abstract void MoveBullet();
+
+        /// <summary>
+        /// Перезагрузка объекта класса
+        /// </summary>
+        public abstract void Reboot();
     }
 }

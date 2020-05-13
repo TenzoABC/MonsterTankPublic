@@ -8,7 +8,7 @@ namespace Monster
     /// <summary>
     /// Абстрактный класс, описывающий абстракцию игрового монстра
     /// </summary>
-    public abstract class AbstractMonster : MonoBehaviour, IPoolable
+    public abstract class AbstractMonster : MonoBehaviour, IPoolable, IClearable
     {
         /// <summary>
         /// Скорость перемещения монстра при его инициализации
@@ -107,8 +107,7 @@ namespace Monster
         /// <summary>
         /// Метод используется для перемещения монстра к точке на сцене
         /// </summary>
-        /// <param name="pointOfMove">Вектор позиции, к которой необходимо переместиться</param>
-        public abstract void MoveToPoint(Vector3 pointOfMove);
+        public abstract void MoveToPoint();
 
         /// <summary>
         /// Метод используется для получения урона монстром
@@ -128,5 +127,10 @@ namespace Monster
         /// <returns>Количество очков здоровья, оставшееся у 
         /// монстра после получения урона</returns>
         protected abstract float CalculatingHealth(float damage);
+
+        /// <summary>
+        /// Перезагрузка объекта класса
+        /// </summary>
+        public abstract void Reboot();
     }
 }

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2509218230071084722}
   - component: {fileID: 2509218230071084723}
   - component: {fileID: 2509218230071084725}
-  - component: {fileID: 2509218230071084724}
   - component: {fileID: 2509218230071084680}
   m_Layer: 0
   m_Name: GameLogic
@@ -128,19 +127,7 @@ MonoBehaviour:
   - {fileID: 6361866442416390517, guid: 64e8ad6ec9c510a4e87f4fb7eea54453, type: 3}
   - {fileID: 8813880427317826783, guid: d692f5a003e9b274d9094eb23b52b1d6, type: 3}
   - {fileID: 3540370400878873062, guid: 68814e39dc0ff264680d458584e5aa1a, type: 3}
-  monstersController: {fileID: 2509218230071084724}
---- !u!114 &2509218230071084724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2509218230071084735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0784de51346406418ed69e1e096842f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  monstersController: {fileID: 0}
 --- !u!114 &2509218230071084680
 MonoBehaviour:
   m_ObjectHideFlags: 0

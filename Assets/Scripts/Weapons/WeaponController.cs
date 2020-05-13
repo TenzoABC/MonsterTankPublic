@@ -7,7 +7,7 @@ using Common.Events;
 namespace Weapon
 {
     /// <summary>
-    /// Класс используется для управления оружием, его сменой и стрельбой
+    /// Класс используется для управления оружием
     /// </summary>
     public class WeaponController : MonoBehaviour, IValidation, IClearable
     {
@@ -33,11 +33,6 @@ namespace Weapon
         /// Обобщенная коллекция, используемая для хранения всех созданных экземпляров оружия
         /// </summary>
         public List<AbstractWeapon> ArrayWeapons { get; private set; } = new List<AbstractWeapon>();
-
-        /// <summary>
-        /// Коллекция, содержащая экземпляры всех снарядов
-        /// </summary>
-        private List<AbstractBullets> bulletsInstances = new List<AbstractBullets>();
 
         /// <summary>
         /// Задержка между сменой оружия
@@ -72,14 +67,9 @@ namespace Weapon
             if (!weaponRoot)
                 Debug.LogError("Instance \"Point position of weapon\" not set in " + this);
         }
-
-        /// <summary>
-        /// Метод обработки алгоритмов работы объекта класса в каждом кадре
-        /// </summary>
         private void Update()
         {
             CheckTimeoutOfChangeWeapon();
-            MoveAllBullets();
         }
 
         /// <summary>
@@ -147,28 +137,7 @@ namespace Weapon
         /// </summary>
         private void Shot()
         {
-            if (ArrayWeapons[idCurrentWeapon].CheckIfCanShot())
-            {
-                var bullet = ArrayWeapons[idCurrentWeapon].Shot();
-
-                if (!bulletsInstances.Contains(bullet))
-                    bulletsInstances.Add(bullet);
-            }
-        }
-
-        /// <summary>
-        /// Метод, используемый для запуска перемещения каждого активного снаряда
-        /// </summary>
-        private void MoveAllBullets()
-        {
-            if (bulletsInstances.Count <= 0)
-                return;
-
-            foreach (var bullet in bulletsInstances)
-            {
-                if (bullet.isActiveAndEnabled == false) continue;
-                bullet.MoveBullet();
-            }
+            ArrayWeapons[idCurrentWeapon].Shot();
         }
 
         /// <summary>
@@ -179,11 +148,6 @@ namespace Weapon
             EventController<PlayerEvents>.GameEvents[PlayerEvents.NextWeapon] -= NextWeapon;
             EventController<PlayerEvents>.GameEvents[PlayerEvents.PrevWeapon] -= PrevWeapon;
             EventController<PlayerEvents>.GameEvents[PlayerEvents.Shot] -= Shot;
-
-            foreach (var bullets in bulletsInstances)
-                bullets.ReturnToPool();
-
-            bulletsInstances.Clear();
         }
     }
 }

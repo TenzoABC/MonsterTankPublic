@@ -40,16 +40,16 @@ namespace Weapon
         /// <summary>
         /// Переопределенный метод, используемый для инициализации выстрела оружия
         /// </summary>
-        /// <returns>Ссылка на объект снаряда</returns>
-        public override AbstractBullets Shot()
+        public override void Shot()
         {
-            timeToNextShot = timeoutBetweenShots;
-            AbstractBullets bulletInstance = (AbstractBullets)bullet.GetPoolInstance();
+            if (CheckIfCanShot())
+            {
+                timeToNextShot = timeoutBetweenShots;
+                AbstractBullets bulletInstance = (AbstractBullets)bullet.GetPoolInstance();
 
-            bulletInstance.transform.position = bulletSpawnPoint.position;
-            bulletInstance.transform.rotation = bulletSpawnPoint.rotation;
-
-            return bulletInstance;
+                bulletInstance.transform.position = bulletSpawnPoint.position;
+                bulletInstance.transform.rotation = bulletSpawnPoint.rotation;
+            }
         }
 
         /// <summary>

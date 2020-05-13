@@ -45,8 +45,7 @@ namespace Weapon
         /// <summary>
         /// Абстрактный метод инициализации выстрела оружия
         /// </summary>
-        /// <returns>Ссылка на объект снаряда</returns>
-        public abstract AbstractBullets Shot();
+        public abstract void Shot();
 
         /// <summary>
         /// Абстрактный метод определения возможности выстрела

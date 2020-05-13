@@ -29,12 +29,6 @@ namespace Monster
         [SerializeField]
         private List<AbstractMonster> monstersPrefabs = null;
 
-        /// <summary>
-        /// Ссылка на объект, представляющий контроллер управления монстрами
-        /// </summary>
-        [SerializeField]
-        private MonstersController monstersController = null;
-
         void Start()
         {
             Validation();
@@ -48,8 +42,6 @@ namespace Monster
         {
             if (monstersPrefabs.Count < 1)
                 Debug.LogError("Count of List with Monsters Prefabs less then 1 in script " + this);
-            if (!monstersController)
-                Debug.LogError("Instance \"MonstersController\" not set in " + this);
         }
 
         /// <summary>
@@ -65,34 +57,9 @@ namespace Monster
 
             isInitialized = true;
             for (int i = 0; i < maxCountOfMonsters; i++)
-                CreateMonster();
-
-            EventController<MonsterEvents>.GameEvents[MonsterEvents.Died] += CreateMonster;
-        }
-
-        /// <summary>
-        /// Метод, управляющий запуском метода создания монстра,
-        /// если создание нового монстра возможно
-        /// </summary>
-        private void CreateMonster()
-        {
-            if (CheckIfCanInstantiate())
                 InstantiateMonster();
-        }
 
-        /// <summary>
-        /// Метод, проверяющий соответствие текущего количества активных монстров
-        /// максимальному числу одновременно активных монстров
-        /// </summary>
-        /// <returns>Логическая переменная, отражающая возможность создания нового монстра на сцене</returns>
-        private bool CheckIfCanInstantiate()
-        {
-            var activeMonsterCount = monstersController.CheckAliveMonsters();
-
-            if (activeMonsterCount < maxCountOfMonsters)
-                return true;
-            else
-                return false;
+            EventController<MonsterEvents>.GameEvents[MonsterEvents.Died] += InstantiateMonster;
         }
 
         /// <summary>
@@ -104,8 +71,6 @@ namespace Monster
             AbstractMonster monsterInstance = (AbstractMonster)monstersPrefabs[idMonster].GetPoolInstance();
 
             monsterInstance.transform.position = GetMonsterPosition();
-
-            monstersController.AddNewMonster(monsterInstance);
         }
 
         /// <summary>
